@@ -35,6 +35,11 @@ const ListItem = styled.div`
 
 const ListItemText = styled.div`
   margin-left: 8px;
+
+  position: relative;
+
+  /* adjust for line-height */
+  top: -${((1.5 - 1) / 2) * 16}px;
 `;
 
 const ListItems = styled.div`
@@ -46,6 +51,10 @@ const ListItems = styled.div`
 const UsageList = props => {
   const { title, bulletImagePath, list, color } = props;
 
+  if (!list || list.length <= 0) {
+    return null;
+  }
+
   return (
     <ListContainer>
       <ListTitle>{title}</ListTitle>
@@ -56,7 +65,9 @@ const UsageList = props => {
           return (
             <ListItem key={index}>
               <img src={bulletImagePath} />
-              <ListItemText>{item}</ListItemText>
+              <ListItemText>
+                <span>{item}</span>
+              </ListItemText>
             </ListItem>
           );
         })}

@@ -19,11 +19,8 @@ const Container = styled.div`
   }
 `;
 
-const UsageGuidelines = () => {
-  const list = [
-    "Default text indicates expected user’s action.",
-    "Default text indicates expected user’s action."
-  ];
+const UsageGuidelines = props => {
+  const { dos, donts } = props;
 
   return (
     <Container>
@@ -31,13 +28,13 @@ const UsageGuidelines = () => {
         title="Do"
         color="#61b405"
         bulletImagePath={PathToDoSVG}
-        list={list}
+        list={dos}
       />
       <UsageList
         title="Don't"
         color="#d0021b"
         bulletImagePath={PathToDontSVG}
-        list={list}
+        list={donts}
       />
     </Container>
   );
