@@ -3,6 +3,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { MDXProvider } from "@mdx-js/tag";
 
 // component
 
@@ -13,12 +14,18 @@ const WrapperBlock = styled.div`
   max-width: 1120px;
   margin-right: auto;
   margin-left: auto;
+`;
 
-  outline: 1px red solid;
+const Paragraph = styled.p`
+  max-width: 600px;
 `;
 
 const Wrapper = props => {
-  return <WrapperBlock>{props.children}</WrapperBlock>;
+  return (
+    <MDXProvider components={{ p: Paragraph }}>
+      <WrapperBlock>{props.children}</WrapperBlock>
+    </MDXProvider>
+  );
 };
 
 Wrapper.propTypes = {

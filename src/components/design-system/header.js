@@ -18,8 +18,7 @@ const HeaderBlock = styled.div`
   margin-left: auto;
 
   margin-top: 80px;
-
-  outline: 1px red solid;
+  margin-bottom: 40px;
 `;
 
 const headlineFont = css`
