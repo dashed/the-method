@@ -22,10 +22,27 @@ const HeaderBlock = styled.div`
   outline: 1px red solid;
 `;
 
+const Headline = styled.div`
+  font-family: "Fira Sans", sans-serif;
+
+  color: #003267;
+
+  display: flex;
+  align-items: center;
+
+  > * + * {
+    margin-left: 16px;
+  }
+`;
+
 const Header = props => {
   return (
     <HeaderBlock>
-      hello <ImageSource src="ownr_logo.svg" alt="Ownr" />
+      <Headline>
+        <span>THE METHOD DESIGN SYSTEM</span>{" "}
+        <ImageSource src="ownr_logo.svg" alt="Ownr" />
+      </Headline>
+      hello
     </HeaderBlock>
   );
 };
