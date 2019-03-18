@@ -1,8 +1,11 @@
 // 3rd-party imports
 
 import React from "react";
-import PropTypes from "prop-types";
 import styled from "styled-components";
+
+// local imports
+
+import ImageSource from "src/components/image";
 
 // component
 
@@ -20,11 +23,11 @@ const HeaderBlock = styled.div`
 `;
 
 const Header = props => {
-  return <HeaderBlock>{props.children}</HeaderBlock>;
-};
-
-Header.propTypes = {
-  children: PropTypes.node.isRequired
+  return (
+    <HeaderBlock>
+      hello <ImageSource src="ownr_logo.svg" alt="Ownr" />
+    </HeaderBlock>
+  );
 };
 
 export default Header;
