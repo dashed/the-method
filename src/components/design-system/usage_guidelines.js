@@ -7,6 +7,7 @@ import styled from "styled-components";
 
 import UsageList from "./usage_list";
 import PathToDoSVG from "./do_list.svg";
+import PathToDontSVG from "./dont_list.svg";
 
 // components
 
@@ -35,7 +36,7 @@ const UsageGuidelines = () => {
       <UsageList
         title="Don't"
         color="#d0021b"
-        bulletImagePath={PathToDoSVG}
+        bulletImagePath={PathToDontSVG}
         list={list}
       />
     </Container>

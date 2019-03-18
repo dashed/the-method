@@ -15,8 +15,7 @@ const ListTitle = styled.div`
 
 const ListContainer = styled.div`
   max-width: ${42 * 8}px;
-
-  outline: 1px solid red;
+  width: ${42 * 8}px;
 `;
 
 const ListDivider = styled.div`
