@@ -40,18 +40,21 @@ const Headline = styled.div`
   }
 `;
 
-const TitleHeadline = styled.div`
-  display: flex;
-  align-items: center;
-
-  margin-top: 24px;
-`;
-
 const Title = styled.div`
   ${headlineFont};
 
   font-size: 48px;
   line-height: 1.17;
+
+  margin-top: 24px;
+`;
+
+const StabilityIndex = styled.span`
+  font-family: "Lato", sans-serif;
+  font-size: 21px;
+  font-weight: 300;
+  line-height: normal;
+  color: #736d7f;
 `;
 
 const Header = props => {
@@ -62,9 +65,9 @@ const Header = props => {
         <ImageSource src="ownr_logo.svg" alt="Ownr" />
       </Headline>
 
-      <TitleHeadline>
-        <Title>{props.title}</Title>
-      </TitleHeadline>
+      <Title>
+        {props.title} <StabilityIndex>{"/ Alpha"}</StabilityIndex>
+      </Title>
     </HeaderBlock>
   );
 };
