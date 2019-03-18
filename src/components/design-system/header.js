@@ -1,7 +1,7 @@
 // 3rd-party imports
 
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 // local imports
 
@@ -22,8 +22,13 @@ const HeaderBlock = styled.div`
   outline: 1px red solid;
 `;
 
-const Headline = styled.div`
+const headlineFont = css`
   font-family: "Fira Sans", sans-serif;
+  font-weight: normal;
+`;
+
+const Headline = styled.div`
+  ${headlineFont};
 
   color: #003267;
 
@@ -35,6 +40,20 @@ const Headline = styled.div`
   }
 `;
 
+const TitleHeadline = styled.div`
+  display: flex;
+  align-items: center;
+
+  margin-top: 24px;
+`;
+
+const Title = styled.div`
+  ${headlineFont};
+
+  font-size: 48px;
+  line-height: 1.17;
+`;
+
 const Header = props => {
   return (
     <HeaderBlock>
@@ -42,7 +61,10 @@ const Header = props => {
         <span>THE METHOD DESIGN SYSTEM</span>{" "}
         <ImageSource src="ownr_logo.svg" alt="Ownr" />
       </Headline>
-      hello
+
+      <TitleHeadline>
+        <Title>{props.title}</Title>
+      </TitleHeadline>
     </HeaderBlock>
   );
 };
