@@ -1,27 +1,18 @@
----
-title: A title from frontmatterss
----
-
 import { Link } from "gatsby";
 
 import Layout from "src/components/layout";
 import Wrapper from "src/components/design-system/wrapper";
-import Header from "src/components/design-system/header";
-import ImageSource from "src/components/image";
 
 export default props => {
   const { children, pageContext } = props;
   return (
     <Layout>
-      <Header />
       <Wrapper>{children}</Wrapper>
     </Layout>
   );
 };
 
 
+# The Method Design System
 
-A dropdown menu presents a group of selections and allows users to select one of the items. Display of the list is activated by user clicking an arrow icon or text area.
-
-
-<ImageSource src="dropdown_block-1.png" alt="example alt" />
+- <Link to="/dropdowns">Dropdown menus</Link>
