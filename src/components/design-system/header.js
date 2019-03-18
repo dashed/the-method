@@ -66,7 +66,7 @@ const Header = props => {
       </Headline>
 
       <Title>
-        {props.title} <StabilityIndex>{"/ Alpha"}</StabilityIndex>
+        {props.title} <StabilityIndex>{`/ ${props.stability}`}</StabilityIndex>
       </Title>
     </HeaderBlock>
   );
