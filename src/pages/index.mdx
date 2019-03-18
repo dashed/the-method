@@ -6,12 +6,13 @@ import { Link } from "gatsby";
 
 import Layout from "src/components/layout";
 import Wrapper from "src/components/design-system/wrapper";
+import Header from "src/components/design-system/header";
 
 export default props => {
   const { children, pageContext } = props;
   return (
     <Layout>
-      <h1>{pageContext.frontmatter.title}</h1>
+      <Header>{pageContext.frontmatter.title}</Header>
       <Wrapper>{children}</Wrapper>
     </Layout>
   );
