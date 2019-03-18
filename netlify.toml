@@ -1,0 +1,9 @@
+[Settings]
+# Added automatically by the Netlify CLI. It has no effect during normal
+# Git-backed deploys.
+ID = "19b1e68e-c47a-4200-9773-dce658f7411a"
+
+# Settings in the [build] context are global and are applied to all contexts
+# unless otherwise overridden by more specific contexts.
+[build]
+  publish = "public/"

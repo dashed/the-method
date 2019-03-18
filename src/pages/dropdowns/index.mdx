@@ -10,43 +10,35 @@ export default props => {
   const { children } = props;
   return (
     <Layout>
-      <Header title="Dropdown menus" stability="Alpha"  />
+      <Header title="Dropdown menus" stability="Alpha" />
       <Wrapper>{children}</Wrapper>
     </Layout>
   );
 };
 
-
-
 A dropdown menu presents a group of selections and allows users to select one of the items. Display of the list is activated by user clicking an arrow icon or text area.
-
 
 <ImageSource src="dropdowns/dropdown.png" alt="Dropdown menu" />
 
-
 # Usage guideline
 
-
 <UsageGuidelines
-    dos={[
+  dos={[
     `Default text indicates expected user’s action.`,
     `Default text and label clearly shows what the list items are grouped for.`,
     `List item text is visually dominent than default text.`,
-    `Use sentence case.`]}
-    donts={[
-        `Inconsistent language.`,
-        `The item wording is lenghy that it prevents for users from fast scanning.`,
-        `Use a sentence as a list item.`,
-        `Note: If being descriptive is required, consider using a checkbox or radio button approach.`
-    ]} />
-
-
+    `Use sentence case.`
+  ]}
+  donts={[
+    `Inconsistent language.`,
+    `The item wording is lenghy that it prevents for users from fast scanning.`,
+    `Use a sentence as a list item.`,
+    `Note: If being descriptive is required, consider using a checkbox or radio button approach.`
+  ]}
+/>
 
 # Interactive states
 
-
 <ImageSource src="dropdowns/interactive_states.png" alt="Interactive states" />
 
-
-
-<br/>
+<br />

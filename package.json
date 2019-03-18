@@ -12,6 +12,7 @@
     "gatsby-cli": "^2.4.16",
     "gatsby-image": "^2.0.34",
     "gatsby-mdx": "^0.4.3",
+    "gatsby-plugin-netlify": "^2.0.13",
     "gatsby-plugin-root-import": "^2.0.5",
     "gatsby-plugin-sharp": "^2.0.29",
     "gatsby-plugin-styled-components": "^3.0.7",
@@ -41,7 +42,7 @@
     }
   },
   "lint-staged": {
-    "*.{md,html,js,toml}": [
+    "*.{md,html,js}": [
       "prettier --write",
       "git add"
     ]
