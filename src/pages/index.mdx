@@ -1,16 +1,22 @@
+---
+title: A title from frontmatterss
+---
+
 import { Link } from "gatsby";
 
 import Layout from "src/components/layout";
+import Wrapper from "src/components/design-system/wrapper";
 
 export default props => {
-  const { children } = props;
+  const { children, pageContext } = props;
   return (
     <Layout>
-      {children}
+      <h1>{pageContext.frontmatter.title}</h1>
+      <Wrapper>{children}</Wrapper>
     </Layout>
   );
 };
 
 
 
-hello worlds
+A dropdown menu presents a group of selections and allows users to select one of the items. Display of the list is activated by user clicking an arrow icon or text area.
