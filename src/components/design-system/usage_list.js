@@ -3,10 +3,6 @@
 import React from "react";
 import styled from "styled-components";
 
-// local imports
-
-import PathToDoSVG from "./do_list.svg";
-
 // components
 
 const ListTitle = styled.div`
@@ -31,6 +27,10 @@ const ListDivider = styled.div`
 const ListItem = styled.div`
   display: flex;
   align-items: flex-start;
+
+  > img {
+    user-select: none;
+  }
 `;
 
 const ListItemText = styled.div`
@@ -64,7 +64,7 @@ const UsageList = props => {
         {list.map((item, index) => {
           return (
             <ListItem key={index}>
-              <img src={bulletImagePath} />
+              <img src={bulletImagePath} alt="bullet" />
               <ListItemText>
                 <span>{item}</span>
               </ListItemText>
