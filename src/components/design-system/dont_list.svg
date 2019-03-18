@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+  <defs>
+    <polygon id="dont_list-a" points="577 606.622 570.622 613 577 619.378 575.378 621 569 614.622 562.622 621 561 619.378 567.378 613 561 606.622 562.622 605 569 611.378 575.378 605"/>
+  </defs>
+  <use fill="#D0021B" fill-rule="evenodd" transform="translate(-561 -605)" xlink:href="#dont_list-a"/>
+</svg>
