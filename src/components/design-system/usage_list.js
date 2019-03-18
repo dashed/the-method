@@ -21,7 +21,10 @@ const ListContainer = styled.div`
 
 const ListDivider = styled.div`
   height: 5px;
-  background-color: #61b405;
+
+  ${({ color }) => {
+    return `background-color: ${color};`;
+  }};
 
   margin-bottom: ${8 * 4}px;
 `;
@@ -42,12 +45,12 @@ const ListItems = styled.div`
 `;
 
 const UsageList = props => {
-  const { title, bulletImagePath, list } = props;
+  const { title, bulletImagePath, list, color } = props;
 
   return (
     <ListContainer>
       <ListTitle>{title}</ListTitle>
-      <ListDivider />
+      <ListDivider color={color} />
 
       <ListItems>
         {list.map((item, index) => {
