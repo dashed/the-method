@@ -5,6 +5,10 @@ import PropTypes from "prop-types";
 import styled, { css } from "styled-components";
 import { MDXProvider } from "@mdx-js/tag";
 
+// local imports
+
+import CodeBlock from "src/components/code_block";
+
 // component
 
 const WrapperBlock = styled.div`
@@ -38,7 +42,7 @@ const Paragraph = styled.p`
 
 const Wrapper = props => {
   return (
-    <MDXProvider components={{ p: Paragraph, h1: H1 }}>
+    <MDXProvider components={{ p: Paragraph, h1: H1, code: CodeBlock }}>
       <WrapperBlock>{props.children}</WrapperBlock>
     </MDXProvider>
   );
