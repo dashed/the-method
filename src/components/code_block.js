@@ -5,8 +5,6 @@ import Highlight, { defaultProps } from "prism-react-renderer";
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 import styled, { css } from "styled-components";
 
-import Counter from "src/components/counter";
-
 // components
 
 const StyledProvider = styled(LiveProvider)`
@@ -63,15 +61,25 @@ const StyledError = styled(LiveError)`
   padding: 10px;
 `;
 
-export default props => {
-  const { children, className, live, ...restProps } = props;
+const CodeBlock = props => {
+  const { children, className, live, scope, ...restProps } = props;
 
   const language = className ? className.replace(/language-/, "") : "js";
 
+  const code = String(children).trim();
+
   if (live) {
+    const liveCodeProps = {
+      ...restProps
+    };
+
+    if (scope) {
+      liveCodeProps.scope = scope;
+    }
+
     return (
       <div>
-        <StyledProvider code={children} scope={{ Counter }} {...restProps}>
+        <StyledProvider code={code} {...liveCodeProps}>
           <LiveWrapper>
             <StyledEditor>
               <LiveEditor />
@@ -84,7 +92,7 @@ export default props => {
     );
   }
   return (
-    <Highlight {...defaultProps} code={children} language={language}>
+    <Highlight {...defaultProps} code={code} language={language}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre className={className} style={{ ...style, padding: "20px" }}>
           {tokens.map((line, i) => (
@@ -99,3 +107,5 @@ export default props => {
     </Highlight>
   );
 };
+
+export default CodeBlock;
