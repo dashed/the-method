@@ -11,8 +11,6 @@ import ChevronDown from "./chevron_down";
 
 // components
 
-const items = ["Ontario", "Alberta", "British Columbia"];
-
 const DropdownWrapper = styled.div`
   display: flex;
   flex-direction: row;
@@ -36,8 +34,7 @@ const DropdownWrapper = styled.div`
 
   padding-left: 20px;
   padding-right: 20px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  height: 56px;
 
   font-size: 16px;
   font-weight: normal;
@@ -55,10 +52,45 @@ const StyledLabel = styled.span`
   margin-right: 15px;
 
   flex-grow: 999;
+
+  position: relative;
+
+  ${({ hasSelection }) => {
+    if (!hasSelection) {
+      return null;
+    }
+
+    return `color: #33235b;`;
+  }};
+`;
+
+const LocationType = styled.div`
+  font-size: 11px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  letter-spacing: normal;
+  color: #736d7f;
 `;
 
 const DropdownLabel = props => {
   const { currentSelection, onClick, isOpen } = props;
+
+  if (!!currentSelection) {
+    return (
+      <DropdownWrapper onClick={onClick} isOpen={isOpen}>
+        <div
+          css={`
+            flex-grow: 999;
+          `}
+        >
+          <LocationType>{"Province"}</LocationType>
+          <StyledLabel hasSelection={true}>{currentSelection}</StyledLabel>
+        </div>
+        <ChevronDown />
+      </DropdownWrapper>
+    );
+  }
 
   const placeholder = _.get(props, ["placeholder"], "");
 
@@ -120,13 +152,7 @@ const ItemList = styled.div`
 `;
 
 const DropdownMenu = props => {
-  const {
-    getMenuProps,
-    isOpen,
-    getItemProps,
-    highlightedIndex,
-    selectedItem
-  } = props;
+  const { isOpen, getItemProps, highlightedIndex, selectedItem, items } = props;
 
   if (!isOpen) {
     return null;
@@ -157,18 +183,15 @@ const DropdownMenu = props => {
 };
 
 const Dropdown = props => {
-  const { placeholder } = props;
+  const { placeholder, items } = props;
 
   return (
     <Downshift itemToString={item => (item ? item : "")}>
       {downshiftProps => {
         const {
-          getInputProps,
           getItemProps,
-          getLabelProps,
           getMenuProps,
           isOpen,
-          inputValue,
           highlightedIndex,
           selectedItem,
           toggleMenu
@@ -190,14 +213,13 @@ const Dropdown = props => {
               getItemProps={getItemProps}
               highlightedIndex={highlightedIndex}
               selectedItem={selectedItem}
+              items={items}
             />
           </div>
         );
       }}
     </Downshift>
   );
-
-  return <div>dropdown</div>;
 };
 
 export default Dropdown;
