@@ -5,7 +5,9 @@ import Wrapper from "src/components/design-system/wrapper";
 import Header from "src/components/design-system/header";
 import ImageSource from "src/components/image";
 import UsageGuidelines from "src/components/design-system/usage_guidelines";
+
 import Counter from "src/components/counter";
+import Dropdown from "src/components/dropdown";
 import Playground from "src/components/playground";
 
 export default props => {
@@ -49,12 +51,11 @@ A dropdown menu presents a group of selections and allows users to select one of
 # Coding Example
 
 
-
-<Playground scope={{Counter}}>
-{`
-  <Counter start={200} />
-`}
-</Playground>
+<div>
+  <Playground scope={{Counter, Dropdown}}>{`
+<Dropdown start={200} />
+  `}</Playground>
+</div>
 
 
 <br/>
