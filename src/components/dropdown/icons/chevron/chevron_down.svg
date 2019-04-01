@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8" height="4" viewBox="0 0 8 4">
+  <defs>
+    <polygon id="chevron_down-a" points="3.99 4.697 7.321 2 8 2.753 3.99 6 0 2.77 .679 2.017"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd" transform="translate(0 -2)">
+    <mask id="chevron_down-b" fill="#fff">
+      <use xlink:href="#chevron_down-a"/>
+    </mask>
+    <use fill="#FFF" fill-rule="nonzero" xlink:href="#chevron_down-a"/>
+    <g fill="#FF066E" fill-rule="nonzero" mask="url(#chevron_down-b)">
+      <rect width="8" height="8"/>
+    </g>
+  </g>
+</svg>
