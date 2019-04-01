@@ -32,8 +32,8 @@ const DropdownWrapper = styled.div`
     `;
   }};
 
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 18px;
+  padding-right: 18px;
   height: 56px;
 
   font-size: 16px;
@@ -124,10 +124,10 @@ const ItemList = styled.div`
   letter-spacing: normal;
   color: #33235b;
 
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-top: 16px;
+  padding-bottom: 16px;
 
   cursor: pointer;
   user-select: none;
